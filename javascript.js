@@ -71,8 +71,10 @@ function rockPaperScissors (playerSelection, computerSelection) {
         }
     }
 
+    //display score on page
     scoreOutput.innerHTML = `Your score: ${playerScore}. Computer Score: ${computerScore}.`;
 
+    //timeout in order to let alert display AFTER the page updates.
     setTimeout(() => {
         
     
