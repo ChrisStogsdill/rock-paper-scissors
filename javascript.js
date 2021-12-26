@@ -10,6 +10,7 @@ rockLink.addEventListener("click", function() {rockPaperScissors("rock", compute
 paperLink.addEventListener("click", function() {rockPaperScissors("paper", computerPlay())})
 scissorsLink.addEventListener("click", function() {rockPaperScissors("scissors", computerPlay())})
 
+
 //function to output rock, paper, or scissors at random
 function computerPlay() {
     let randomChoice = Math.floor(Math.random() * 3);
@@ -30,6 +31,8 @@ function computerPlay() {
 
 function rockPaperScissors (playerSelection, computerSelection) {
     let beginningText = `You have chosen ${playerSelection}, the PC chooses ${computerSelection}:`;
+
+    
     //tie result
     if (playerSelection == computerSelection) {
         gameResult.innerHTML = beginningText + " It is a tie!";
@@ -67,5 +70,22 @@ function rockPaperScissors (playerSelection, computerSelection) {
             playerScore += 1;
         }
     }
+
     scoreOutput.innerHTML = `Your score: ${playerScore}. Computer Score: ${computerScore}.`;
+
+    setTimeout(() => {
+        
+    
+    if (playerScore == 5) {    
+        location.reload();    
+        alert("You Win the game!");
+        
+    }
+    else if (computerScore == 5) {
+        alert("You Lose the game!")
+        location.reload();
+    } },10);
+    
 }
+
+
